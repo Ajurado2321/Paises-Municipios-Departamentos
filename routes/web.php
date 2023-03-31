@@ -21,12 +21,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// rutas Navegacion
-// Route::get('/paises/index', [RutasController::class, 'index']) ->name('paises.index');
-// Route::get('/departamentos/index', [RutasController::class, 'index']) ->name('departamentos.index');
-// Route::get('/municipios/index', [RutasController::class, 'index']) ->name('municipios.index');
-
 
 // rutas Paises
 Route::get('/paises', [PaisController::class, 'index'])->name('paises.index');
+Route::post('/paises', [PaisController::class, 'store'])->name('paises.store');
+Route::get('/paises/create', [PaisController::class, 'create'])->name('paises.create');
 
