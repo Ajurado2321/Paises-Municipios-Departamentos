@@ -41,7 +41,11 @@
 
                        <a href="{{ route('paises.edit',['pais'=>$pais->pais_codi]) }}" class="btn btn-info">Edit</a>
 
-                      
+                      <form method="POST" action="{{ route('paises.destroy', ['pais' => $pais->pais_codi]) }}" style="display: inline-block">
+                      @method('delete')
+                      @csrf
+                      <input type="submit" class="btn btn-danger" value="delete">
+                      </form> 
                     </td>
                 </tr>
 

@@ -28,3 +28,4 @@ Route::post('/paises', [PaisController::class, 'store'])->name('paises.store');
 Route::get('/paises/create', [PaisController::class, 'create'])->name('paises.create');
 Route::put('/paises/{pais}', [PaisController::class, 'update'])->name('paises.update');
 Route::get('/paises/{pais}/edit', [PaisController::class, 'edit'])->name('paises.edit');
+Route::delete('/paises/{pais}', [PaisController::class, 'destroy'])->name('paises.destroy');
