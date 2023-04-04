@@ -19,7 +19,7 @@
         <h1 class="h1 text-center fw-light">Listado de Departamentos</h1>
       </div>
       <div class="card-body">
-           
+           <a href="{{ route('departamentos.create') }}" class="btn btn-success mb-3">Add Department</a> 
         <table class="table table table-bordered">
             <thead>
               <tr class="text-center" style="background-color: aqua">
@@ -39,7 +39,7 @@
                     <td class="text-center">{{ $departamento->pais_codi }}</td>
                     <td class="text-center">
 
-                      
+                     
                     </td>
                 </tr>
 
