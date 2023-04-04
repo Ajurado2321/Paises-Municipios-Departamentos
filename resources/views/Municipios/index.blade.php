@@ -12,7 +12,6 @@
 <body>
 
     <div class="container">
-
       <div class="p-3 d-flex justify-content-center">
       <div class="card w-75">
         <div class="card-header">
@@ -38,6 +37,8 @@
                     <td class="text-center">{{ $municipio->muni_nomb }}</td>
                     <td class="text-center">{{ $municipio->depa_codi }}</td>
                     <td class="text-center">
+
+                      <a href="{{ route('municipios.edit',['municipio'=>$municipio->muni_codi]) }}" class="btn btn-info">Edit</a>
 
                      
                     </td>
