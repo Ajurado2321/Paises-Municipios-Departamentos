@@ -25,10 +25,7 @@ class DepartamentoController extends Controller
      */
     public function create()
     {
-        $paises = DB::table('tb_pais')
-        ->orderBy('pais_nomb')
-        ->get();
-        return view('departamentos.new', ['paises'=>$paises]);
+        
     }
 
     /**
@@ -36,18 +33,7 @@ class DepartamentoController extends Controller
      */
     public function store(Request $request)
     {
-        $departamento = new Departamento();
-
-        $departamento->depa_codi=$request->idDepartment;
-        $departamento->depa_nomb=$request->nameDepartment;
-        $departamento->pais_codi=$request->countryCode;   
-        $departamento->save();
- 
-        $departamentos = DB::table('tb_departamento')
-        ->join('tb_pais', 'tb_departamento.pais_codi', '=', 'tb_pais.pais_codi')
-        ->select('tb_departamento.*',"tb_pais.pais_nomb")
-        ->get();
-        return view('departamentos.index', ['departamentos' => $departamentos]);
+        
     }
 
     /**
@@ -63,12 +49,7 @@ class DepartamentoController extends Controller
      */
     public function edit($id)
     {
-        $departamento=Departamento::find($id);
-
-        $paises=DB::table('tb_pais')
-        ->orderBy('pais_nomb')
-        ->get();
-        return view('departamentos.edit',['departamento' => $departamento, 'paises' => $paises]);
+       
     }
 
     /**
@@ -76,18 +57,7 @@ class DepartamentoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $departamento = Departamento::find($id);
-
-        $departamento->depa_nomb = $request->namedepartament;
-        $departamento->pais_codi = $request->countryCode;
-        $departamento->save();
-
-        $departamentos = DB::table('tb_departamento')
-        ->join('tb_pais', 'tb_departamento.pais_codi', '=' ,'tb_pais.pais_codi')
-        ->select('tb_departamento.*', "tb_pais.pais_nomb")
-        ->get();
-
-        return view('departamentos.index',['departamentos' => $departamentos]);
+      
     }
 
     /**
@@ -95,14 +65,6 @@ class DepartamentoController extends Controller
      */
     public function destroy($id)
     {
-        $departamento = Departamento::find($id);
-        $departamento->delete();
-
-        $departamentos = DB::table('tb_departamento')
-        ->join('tb_pais', 'tb_departamento.pais_codi', '=', 'tb_pais.pais_codi')
-        ->select('tb_departamento.*', 'tb_pais.pais_nomb')
-        ->get();
-
-        return view('departamentos.index', ['departamentos'  => $departamentos]);
+      
     }
 }

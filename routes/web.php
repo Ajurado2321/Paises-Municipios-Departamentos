@@ -29,6 +29,9 @@ Route::get('/paises/create', [PaisController::class, 'create'])->name('paises.cr
 Route::put('/paises/{pais}', [PaisController::class, 'update'])->name('paises.update');
 Route::get('/paises/{pais}/edit', [PaisController::class, 'edit'])->name('paises.edit');
 Route::delete('/paises/{pais}', [PaisController::class, 'destroy'])->name('paises.destroy');
+// rutas Departamentos
+Route::get('/departamentos', [DepartamentoController::class, 'index'])->name('departamentos.index');
+
 
 // rutas de Municipios
 Route::get('/municipios', [MunicipioController::class, 'index'])->name('municipios.index');
