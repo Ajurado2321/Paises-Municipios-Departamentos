@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     {{-- bootstrap.min.css --}}
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <title>Listado de Paises</title>
+    <title>Listado de Departamentos</title>
 </head>
 
 <body>
@@ -34,32 +34,32 @@
       <div class="p-3 d-flex justify-content-center">
       <div class="card w-75">
         <div class="card-header">
-        <h1 class="h1 text-center fw-light">Listado de Paises</h1>
+        <h1 class="h1 text-center fw-light">Listado de Departamentos</h1>
       </div>
       <div class="card-body">
-          <a href="{{ route('paises.create') }}" class="btn btn-success mb-3">Add Country</a> 
+           <a href="{{ route('departamentos.create') }}" class="btn btn-success mb-3">Add Department</a> 
         <table class="table table table-bordered">
             <thead>
               <tr class="text-center" style="background-color: aqua">
-                <th scope="col">country code</th>
-                <th scope="col">country name</th>
-                <th scope="col">nationality country</th>
+                <th scope="col">Department code</th>
+                <th scope="col">Department name</th>
+                <th scope="col">country Code</th>
                 <th scope="col">options</th>
               </tr>
             </thead>
             <tbody>
 
-                @foreach ($paises as $pais)
+                @foreach ($departamentos as $departamento)
                     
                 <tr>
-                    <th class="text-center" scope="row">{{  $pais->pais_codi }}</th>
-                    <td class="text-center">{{ $pais->pais_nomb }}</td>
-                    <td class="text-center">{{ $pais->pais_capi }}</td>
+                    <th class="text-center" scope="row">{{  $departamento->depa_codi }}</th>
+                    <td class="text-center">{{ $departamento->depa_nomb }}</td>
+                    <td class="text-center">{{ $departamento->pais_codi }}</td>
                     <td class="text-center">
 
-                      <a href="{{ route('paises.edit',['pais'=>$pais->pais_codi]) }}" class="btn btn-info">Edit</a>
+                      <a href="{{ route('departamentos.edit',['departamento'=>$departamento->depa_codi]) }}" class="btn btn-info">Edit</a>
 
-                      <form method="POST" action="{{ route('paises.destroy', ['pais' => $pais->pais_codi]) }}" style="display: inline-block">
+                      <form method="POST" action="{{ route('departamentos.destroy', ['departamento' => $departamento->depa_codi]) }}" style="display: inline-block">
                       @method('delete')
                       @csrf
                       <input type="submit" class="btn btn-danger" value="delete">
