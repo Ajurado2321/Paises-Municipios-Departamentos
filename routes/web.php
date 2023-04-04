@@ -33,7 +33,8 @@ Route::delete('/paises/{pais}', [PaisController::class, 'destroy'])->name('paise
 Route::get('/departamentos', [DepartamentoController::class, 'index'])->name('departamentos.index');
 Route::post('/departamentos', [DepartamentoController::class, 'store'])->name('departamentos.store');
 Route::get('/departamentos/create', [DepartamentoController::class, 'create'])->name('departamentos.create');
-
+Route::put('/departamentos/{departamento}', [DepartamentoController::class, 'update'])->name('departamentos.update');
+Route::get('/departamentos/{departamento}/edit', [DepartamentoController::class, 'edit'])->name('departamentos.edit');
 
 // rutas de Municipios
 Route::get('/municipios', [MunicipioController::class, 'index'])->name('municipios.index');

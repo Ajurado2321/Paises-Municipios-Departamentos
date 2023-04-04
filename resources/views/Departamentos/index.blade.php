@@ -39,7 +39,9 @@
                     <td class="text-center">{{ $departamento->pais_codi }}</td>
                     <td class="text-center">
 
-                     
+                      <a href="{{ route('departamentos.edit',['departamento'=>$departamento->depa_codi]) }}" class="btn btn-info">Edit</a>
+
+
                     </td>
                 </tr>
 
