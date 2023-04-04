@@ -40,7 +40,11 @@
 
                       <a href="{{ route('municipios.edit',['municipio'=>$municipio->muni_codi]) }}" class="btn btn-info">Edit</a>
 
-                     
+                      <form method="POST" action="{{ route('municipios.destroy', ['municipio' => $municipio->muni_codi]) }}" style="display: inline-block">
+                      @method('delete')
+                      @csrf
+                      <input type="submit" class="btn btn-danger" value="delete">
+                      </form>
                     </td>
                 </tr>
 
