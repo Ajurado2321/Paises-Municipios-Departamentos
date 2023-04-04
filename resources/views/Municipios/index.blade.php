@@ -12,32 +12,14 @@
 <body>
 
     <div class="container">
-      <div style="margin-left: 32%">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-          <div class="container-fluid">
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-              <ul class="navbar-nav">
-                <li class="nav-item">
-                  <a class="nav-link" href="{{ route('paises.index') }}" style="font-size: 30px">Paises</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="{{ route('departamentos.index') }}" style="font-size: 30px">Departamentos</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="{{ route('municipios.index') }}" style="font-size: 30px">Municipios</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </nav>
-      </div>
+
       <div class="p-3 d-flex justify-content-center">
       <div class="card w-75">
         <div class="card-header">
         <h1 class="h1 text-center fw-light">Listado de Municipios</h1>
       </div>
       <div class="card-body">
-              
+            <a href="{{ route('municipios.create') }}" class="btn btn-success mb-3">Add Municipality</a>  
         <table class="table table table-bordered">
             <thead>
               <tr class="text-center" style="background-color: aqua">
@@ -57,7 +39,7 @@
                     <td class="text-center">{{ $municipio->depa_codi }}</td>
                     <td class="text-center">
 
-                      
+                     
                     </td>
                 </tr>
 
